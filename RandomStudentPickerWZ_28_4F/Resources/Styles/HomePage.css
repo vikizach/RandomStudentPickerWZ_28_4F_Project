@@ -1,0 +1,99 @@
+.topSection{
+    background-color: #FFC570;
+}
+
+.middleSection{
+    background-color: #EFD2B0;
+}
+
+.drawSection{
+    background-color: #547792;
+}
+
+.resultSection{
+    background-color: #213263;
+}
+
+.appTitleBar {
+    background-color: #213263;
+    padding: 15;
+    border-radius: 20;
+}
+
+.appTitleText{
+    color: white;
+    font-size: 20;
+    font-weight: bold;
+}
+
+#appTitle{
+    text-align: center;
+}
+
+.titleSection{
+    font-size: 18;
+    color: #213263;
+    font-weight: bold;
+}
+
+.luckyNumberLabel {
+    font-size: 20;
+    color: #213263;
+}
+
+.mainPicker {
+    background-color: white;
+    color: #213263;
+}
+
+.mainEntry {
+    background-color: white;
+    color: #213263;
+    padding: 10;
+    margin: 4;
+    border-radius:10;
+}
+
+.studentNumber {
+    color: #213263;
+    font-size: 16;
+}
+
+.studentName {
+    color: #213263;
+    font-size: 16;
+}
+
+.secondaryButton {
+    background-color: #547792;
+    color: white;
+    border-radius: 12;
+}
+.deleteButton{
+    background-color: #213263;
+}
+
+.drawButton {
+    background-color: #213263;
+    font-size: 18;
+    padding: 12;
+}
+
+.resultLabel {
+    color: white;
+}
+
+#titleLabel {
+    text-align: center;
+}
+
+#mainDrawButton {
+    border-radius: 20;
+}
+
+#drawResultLabel {
+    font-size: 28;
+}
+
+
+

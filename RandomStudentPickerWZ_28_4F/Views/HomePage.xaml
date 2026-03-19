@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RandomStudentPickerWZ_28_4F.Views.HomePage"
+             Title="HomePage">
+
+    <ContentPage.Resources>
+        <StyleSheet Source="../Resources/Styles/HomePage.css" />
+    </ContentPage.Resources>
+
+    <ScrollView>
+
+        <VerticalStackLayout Spacing="0">
+
+            <VerticalStackLayout StyleClass="topSection" Spacing="18" Padding="24">
+
+                <Border StyleClass="appTitleBar">
+                    <Grid>
+                        
+                        <Label Text="Losowanie ucznia do odpowiedzi"
+                            StyleClass="appTitleText"
+                            StyleId="appTitle"/>
+                        
+                    </Grid>
+                </Border>
+
+
+                <Label x:Name="LuckyNumberLabel"
+                       Text="Szczęśliwy numerek: "
+                       StyleClass="luckyNumberLabel"
+                       StyleId="luckyLabel"/>
+
+                    <Label Text="Wybierz klasę: " 
+                       StyleClass="titleSection"/>
+                
+
+                <Picker x:Name="ClassPicker"
+                Title="Kliknij tu i wybierz klasę"
+                StyleClass="mainPicker"
+                StyleId="classPicker"/>
+
+            </VerticalStackLayout>
+
+            <VerticalStackLayout StyleClass="middleSection" Spacing="16" Padding="24">
+
+                <Label Text="Uczniowie w klasie:"
+                StyleClass="titleSection"/>
+
+                <Grid ColumnDefinitions="*,Auto" ColumnSpacing="10">
+                 
+
+            <Entry x:Name="NewClassEntry"
+                   Placeholder="np.1A"
+                   StyleClass="mainEntry"
+                   Grid.Column="0" />
+
+            <Button Text="Dodaj klasę"
+                    Clicked="OnAddClassClicked"
+                    StyleClass="secondaryButton"
+                    Grid.Column="1" />
+        </Grid>
+
+        <Grid ColumnDefinitions="80,*,Auto" ColumnSpacing="10">
+
+            <Entry x:Name="NewStudentNumber"
+                   Placeholder="Nr"
+                   Keyboard="Numeric"
+                   StyleClass="mainEntry"
+                   Grid.Column="0" />
+
+            <Entry x:Name="NewStudentName"
+                   Placeholder="Imię i nazwisko"
+                   StyleClass="mainEntry"
+                   Grid.Column="1" />
+
+            <Button Text="Dodaj"
+                    Clicked="OnAddStudentClicked"
+                    StyleClass="secondaryButton"
+                    Grid.Column="2" />
+
+        </Grid>
+
+                <CollectionView x:Name="StudentsView"
+                        HeightRequest="260">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="50,*,Auto,Auto"
+                          ColumnSpacing="10"
+                          Padding="6">
+
+                                <Label Text="{Binding StudentsNumber}"
+                               Grid.Column="0"
+                               VerticalOptions="Center"
+                               FontAttributes="Bold"
+                                StyleClass="studentNumber"/>
+
+                                <Label Text="{Binding NameOfStudent}"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                             VerticalOptions="Center"
+                                              StyleClass="studentName"/>
+
+                                <CheckBox IsChecked="{Binding IsPresent}"
+                                             CheckedChanged="OnPresenceChanged"
+                                             Grid.Column="2"
+                                             VerticalOptions="Center" />
+
+                                <Button Text="Usuń"
+                                            Grid.Column="3"
+                                            Clicked="OnRemoveStudentClicked" 
+                                            StyleClass="deleteButton"/>
+
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout StyleClass="resultSection" Padding="24">
+                
+          
+            <Button Text="Losuj ucznia"
+                Clicked="OnDrawClicked"
+                StyleClass="drawButton"
+                StyleId="mainDrawButton"/>
+
+        <Label x:Name="DrawResult"
+               Text=""
+               FontSize="22"
+               FontAttributes="Bold"
+               StyleClass="resultLabel"
+               StyleId="drawResultLabel"/>
+
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
