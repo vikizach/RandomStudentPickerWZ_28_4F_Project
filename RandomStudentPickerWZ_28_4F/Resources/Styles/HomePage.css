@@ -88,6 +88,7 @@ NavigationPage {
     background-color: #213263;
     font-size: 18;
     padding: 12;
+    color: white;
 }
 
 .resultLabel {
