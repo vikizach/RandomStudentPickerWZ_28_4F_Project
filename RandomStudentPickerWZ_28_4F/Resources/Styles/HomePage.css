@@ -1,3 +1,13 @@
+.page {
+    background-color: #FFC570;
+}
+
+NavigationPage {
+    -maui-bar-background-color: #492a59;
+    -maui-bar-text-color: white;
+}
+
+
 .topSection{
     background-color: #FFC570;
 }
@@ -69,8 +79,9 @@
     color: white;
     border-radius: 12;
 }
-.deleteButton{
+.deleteButton {
     background-color: #213263;
+    color: white;
 }
 
 .drawButton {
@@ -89,6 +100,7 @@
 
 #mainDrawButton {
     border-radius: 20;
+    color: white;
 }
 
 #drawResultLabel {
